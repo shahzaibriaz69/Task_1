@@ -1,11 +1,10 @@
 <?php
-// Include your config/db file here (where $con and helper functions are defined)
-include('config.php'); 
 
-// Task 2: Drivers fetch karna
+include('config.php');
+
+
 $drivers = getAll($con, "SELECT id, name FROM projectStarter_users WHERE role = 'employee'");
 
-// Task 1: Form Submit hone par data save karna
 if (isset($_POST['submit_schedule'])) {
     $date = $_POST['date'];
     $s_time = $_POST['start_time'];

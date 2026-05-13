@@ -12,7 +12,8 @@ if (!$con) {
 }
 
 // Helper functions
-function getAll($con, $query) {
+function getAll($con, $query)
+{
     $result = mysqli_query($con, $query);
     if ($result) {
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -21,7 +22,8 @@ function getAll($con, $query) {
     }
 }
 
-function runQuery($query) {
+function runQuery($query)
+{
     global $con;
     return mysqli_query($con, $query);
 }
