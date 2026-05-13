@@ -8,7 +8,8 @@ $train_id = $_GET['id'];
 $schedule = getRow($con, "SELECT * FROM train_schedule WHERE id = '$train_id'");
 
 
-$customers = getAll($con, "SELECT id, name FROM projectStarter_users WHERE role = 'customer'");
+
+$customers = getAll($con, "SELECT id, name FROM projectstarter_users WHERE role = 'customer'");
 
 
 if (isset($_POST['add_passenger'])) {
@@ -18,6 +19,51 @@ if (isset($_POST['add_passenger'])) {
     exit();
 }
 ?>
+
+<style>
+    /* Theme Colors */
+    :root {
+        --navy: #001f3f;
+        --gold: #FFD700;
+        --bg: #f0f2f5;
+    }
+
+    body {
+        background-color: var(--bg);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Portlet / Card Header */
+    .card-header,
+    .bg-primary,
+    .bg-info {
+        background-color: var(--navy) !important;
+        color: var(--gold) !important;
+        border-bottom: 2px solid var(--gold);
+    }
+
+    /* Buttons */
+    .btn-primary,
+    .btn-success {
+        background-color: var(--gold) !important;
+        border: none !important;
+        color: var(--navy) !important;
+        font-weight: bold;
+    }
+
+    /* Table Header */
+    .table thead {
+        background-color: var(--navy);
+        color: var(--gold);
+    }
+
+    /* Card Styling */
+    .card {
+        border-radius: 12px;
+        border: 1px solid var(--navy);
+        overflow: hidden;
+    }
+</style>
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +77,7 @@ if (isset($_POST['add_passenger'])) {
     <div class="container py-5">
 
         <div class="card shadow mb-4">
-            <div class="card-header bg-info text-white">
+            <div class="card-header">
                 <h4>Train Details</h4>
             </div>
             <div class="card-body">
